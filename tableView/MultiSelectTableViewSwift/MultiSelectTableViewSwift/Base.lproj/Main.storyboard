@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEC-ZE-Bvd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--多选示例-->
+        <scene sceneID="sVd-Rg-4Ik">
+            <objects>
+                <tableViewController id="ehn-jm-0AM" customClass="MasterListViewController" customModule="MultiSelectTableViewSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2wZ-Tx-9GB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="YwQ-8w-AGo">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YwQ-8w-AGo" id="xcL-WM-xnr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ehn-jm-0AM" id="wZp-MT-UBt"/>
+                            <outlet property="delegate" destination="ehn-jm-0AM" id="hJ5-t0-NL5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="多选示例" id="8F7-Xb-O2Q"/>
+                    <connections>
+                        <outlet property="addButton" destination="HGB-qX-iUR" id="ck8-76-2zB"/>
+                        <outlet property="cancelButton" destination="qYp-HH-egO" id="zVQ-rs-bS0"/>
+                        <outlet property="deleteButton" destination="LyY-ST-sWx" id="Riq-EP-GHC"/>
+                        <outlet property="editButton" destination="1EX-Tg-sUr" id="Wn1-eh-4hA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="THW-gu-obT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="edit" id="1EX-Tg-sUr">
+                    <connections>
+                        <action selector="editAction:" destination="ehn-jm-0AM" id="OD6-rv-EZm"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="add" id="HGB-qX-iUR">
+                    <connections>
+                        <action selector="addAction:" destination="ehn-jm-0AM" id="SWJ-X1-zam"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="cancel" id="qYp-HH-egO">
+                    <connections>
+                        <action selector="cancelAction:" destination="ehn-jm-0AM" id="Wx2-pC-Woj"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem title="Dele" id="LyY-ST-sWx">
+                    <connections>
+                        <action selector="deleteAction:" destination="ehn-jm-0AM" id="Rk8-AB-vpa"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="338" y="348"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mxx-cD-ufQ">
+            <objects>
+                <navigationController id="wEC-ZE-Bvd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xnn-Pr-bSg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ehn-jm-0AM" kind="relationship" relationship="rootViewController" id="w8f-uN-JZq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMF-sD-Tda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-614" y="348"/>
+        </scene>
+    </scenes>
+</document>
